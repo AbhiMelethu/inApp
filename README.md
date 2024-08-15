@@ -3,9 +3,9 @@
 # inApp
 Test Project Abhijith
 
-# Steps :
-   Step1: Run migration: "php artisan migrate"
-   Step2: To create Admin login with Predefined Credentials run seeder: Run "php artisan db:seed --class=CreateAdminUserSeeder"
+# Run the below artisan commands to start the project:
+   php artisan migrate
+   php artisan db:seed --class=CreateAdminUserSeeder
 
    Then login with the given username and password:
       Username: admin@example.com
