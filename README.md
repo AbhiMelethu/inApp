@@ -1,7 +1,19 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 # inApp
-Test Project
+Test Project Abhijith
+
+# Steps :
+   Step1: Run migration: "php artisan migrate"
+   Step2: To create Admin login with Predefined Credentials run seeder: Run "php artisan db:seed --class=CreateAdminUserSeeder"
+
+   Then login with the given username and password:
+      Username: admin@example.com
+      Password: admin123
+# Requirements:
+    PHP Version 8.2.4
+    Laravel 11
+
 =======
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
