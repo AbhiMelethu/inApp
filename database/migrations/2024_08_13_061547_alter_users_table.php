@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('phone','20')->nullable()->after('email_verified_at');
             $table->string('designation', '255')->nullable()->after('phone');
             $table->date('doj')->nullable()->after('designation');
+            $table->tinyInteger('new')->length(1)->default(1);
         });
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     //return view('welcome');
-    return Redirect::route('import.form');
+    return Redirect::route('login');
 });
 
 Route::get('/dashboard', function () {

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use App\Models\UserRole;
 use Exception;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail;
@@ -111,13 +113,37 @@ class ImportController extends Controller
         //Save
         if(empty($userModel)){
             //Insert
-            User::create($array);
+           $this->createNewUser($array);
         }else{
             //Update
             User::where('id', $userModel->id)->update($array);
         }
         //Send mail
         $this->sendMail($array,$randomString);
+    }
+
+    /**
+     * Create new user
+     * @param mixed $array
+     * @return void
+     */
+    private function createNewUser($array)
+    {
+        DB::beginTransaction();
+        try {
+            //Create user
+            $user = User::create($array);
+            //Create user role
+            UserRole::create([
+                'user_id' => $user->id, 
+                'role' => UserRole::ROLE_USER,
+            ]);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            // Handle the exception
+            throw $e;
+        }
     }
 
     /**

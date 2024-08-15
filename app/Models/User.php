@@ -23,7 +23,8 @@ class User extends Authenticatable
         'last_name',
         'phone',
         'designation',
-        'doj'
+        'doj',
+        'new'
     ];
 
     /**
@@ -48,4 +49,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Constants here
+     */
+    const NEW_USER = 1;
+    const NOT_NEW_USER = 0;
+
 }
