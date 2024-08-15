@@ -128,22 +128,19 @@ class ImportController extends Controller
      */
     private function sendMail($array,$randomString)
     {
-        $link = route("login");
-        $forgotLink = route("password.request");
-        $html = 'Hi '.$array['name'].''.'<br>';
-        $html.='To log in, please click on the <a href='.$link.'>link</a> and enter your credentials.'.'<br>';
-        $html.='User Name: '.$array['email'].''.'<br>';
-        $html.='Password: '.$randomString.''.'<br>';
-        $html.='Or please click this <a href='.$forgotLink.'>link</a> to rest the password.'.'<br>';
         //Prepare data
         $data = [
             'subject' => 'InApp: User created successfully',
-            'view' => $html,
+            'name' => $array['name'],
+            'email' => $array['email'],
+            'psw' => $randomString,
+            'view' => 'mails.notify-client',
         ];
         try{
             Mail::to($array['email'])->send(new SendMail($data));
          }catch(Exception $e){
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
+            //Do something
+            //echo 'Caught exception: ',  $e->getMessage(), "\n";
          }
     }
 
