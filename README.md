@@ -4,8 +4,8 @@
 Test Project Abhijith
 
 # Run the below artisan commands to start the project:
-   php artisan migrate
-   php artisan db:seed --class=CreateAdminUserSeeder
+   <b>php artisan migrate</b><br>
+   <b>php artisan db:seed --class=CreateAdminUserSeeder</b>
 
    Then login with the given username and password:
       Username: admin@example.com
