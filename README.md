@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # inApp
 Test Project
 =======
@@ -69,3 +70,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 >>>>>>> 81253bf (Initial commit)
+=======
+# inApp
+Test Project
+>>>>>>> 86d3b9e0b27bf3b81e5aa49e5a09f22f0c97bafe
